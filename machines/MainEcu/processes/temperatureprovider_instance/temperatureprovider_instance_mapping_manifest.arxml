@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>temperatureprovider_mapping</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS-TO-MACHINE-MAPPING-SET>
+                  <SHORT-NAME>TemperatureProviderInstanceToMainEcuMappingSet</SHORT-NAME>
+                  <PROCESS-TO-MACHINE-MAPPINGS>
+                    <PROCESS-TO-MACHINE-MAPPING>
+                      <SHORT-NAME>TemperatureProviderInstanceToMainEcuMapping</SHORT-NAME>
+                      <MACHINE-REF DEST="MACHINE">/ara/demo/machines/MainEcu</MACHINE-REF>
+                      <PROCESS-REF DEST="PROCESS">/ara/processes/temperatureprovider_instance</PROCESS-REF>
+                    </PROCESS-TO-MACHINE-MAPPING>
+                  </PROCESS-TO-MACHINE-MAPPINGS>
+                </PROCESS-TO-MACHINE-MAPPING-SET>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>TemperatureProviderInstanceToPortMapping</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/ara/demo/executables/temperatureprovider_exe/root_swc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ara/demo/applications/temperatureprovider/TemperatureServicePPort</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS-DESIGN">/ara/processes/temperatureprovider_instance_design</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ara/demo/temperatureprovider_instance/TemperatureServiceProvided</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+                  <SHORT-NAME>TemperatureProviderInstanceToMachineMapping</SHORT-NAME>
+                  <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/ara/demo/machines/MainEcuDesign/EthCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+                  <SERVICE-INSTANCE-REFS>
+                    <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ara/demo/temperatureprovider_instance/TemperatureServiceProvided</SERVICE-INSTANCE-REF>
+                  </SERVICE-INSTANCE-REFS>
+                  <UDP-PORT>5000</UDP-PORT>
+                </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>processes</SHORT-NAME>
+          <ELEMENTS>
+            <STARTUP-CONFIG-SET>
+              <SHORT-NAME>startup_set</SHORT-NAME>
+              <STARTUP-CONFIGS>
+                <STARTUP-CONFIG>
+                  <SHORT-NAME>startup_config</SHORT-NAME>
+                  <SCHEDULING-POLICY>SCHEDULING-POLICY-ROUND-ROBIN</SCHEDULING-POLICY>
+                  <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+                </STARTUP-CONFIG>
+              </STARTUP-CONFIGS>
+            </STARTUP-CONFIG-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

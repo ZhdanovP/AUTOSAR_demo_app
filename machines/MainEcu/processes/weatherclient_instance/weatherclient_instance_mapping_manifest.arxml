@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>weatherclient_mapping</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS-TO-MACHINE-MAPPING-SET>
+                  <SHORT-NAME>WeatherClientInstanceToMainEcuMappingSet</SHORT-NAME>
+                  <PROCESS-TO-MACHINE-MAPPINGS>
+                    <PROCESS-TO-MACHINE-MAPPING>
+                      <SHORT-NAME>WeatherClientInstanceToMainEcuMapping</SHORT-NAME>
+                      <MACHINE-REF DEST="MACHINE">/ara/demo/machines/MainEcu</MACHINE-REF>
+                      <PROCESS-REF DEST="PROCESS">/ara/demo/processes/weatherclient_instance</PROCESS-REF>
+                    </PROCESS-TO-MACHINE-MAPPING>
+                  </PROCESS-TO-MACHINE-MAPPINGS>
+                </PROCESS-TO-MACHINE-MAPPING-SET>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>WeatherServiceRequiredInstanceToPortMapping</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/ara/demo/executables/weatherclient_exe/root_swc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ara/demo/applications/weatherclient/WeatherServiceRPort</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS-DESIGN">/ara/demo/processes/weatherclient_instance_design</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ara/demo/weatherclient_instance/WeatherServiceRequired</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+                  <SHORT-NAME>WeatherServiceRequiredToMainEcuMapping</SHORT-NAME>
+                  <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/ara/demo/machines/MainEcuDesign/EthCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+                  <SERVICE-INSTANCE-REFS>
+                    <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ara/demo/weatherclient_instance/WeatherServiceRequired</SERVICE-INSTANCE-REF>
+                  </SERVICE-INSTANCE-REFS>
+                  <UDP-PORT>5000</UDP-PORT>
+                </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+                <PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-DATABASE-MAPPING>
+                  <SHORT-NAME>WeatherClientPortToTemperatureDatabaseMapping</SHORT-NAME>
+                  <KEY-VALUE-STORAGE-REF DEST="PERSISTENCY-KEY-VALUE-DATABASE">/ara/kvs_databases/TemperatureDatabase</KEY-VALUE-STORAGE-REF>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/ara/demo/executables/weatherclient_exe/root_swc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="PR-PORT-PROTOTYPE">/ara/demo/applications/weatherclient/WeatherClientKvsPRPort</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/ara/demo/processes/weatherclient_instance</PROCESS-REF>
+                </PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-DATABASE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,9 @@
+file(GLOB INTERFACES_ARXMLS_LOCAL CONFIGURE_DEPENDS "*.arxml")
+
+#list(APPEND INTERFACES_ARXMLS_LOCAL
+#    ${ARA_ARXMLS_DIR}/shared_types.arxml
+#    ${ARA_ARXMLS_DIR}/ucmtypes.arxml
+#    ${ARA_ARXMLS_DIR}/package_management.arxml
+#)
+
+set(INTERFACES_ARXMLS ${INTERFACES_ARXMLS_LOCAL} PARENT_SCOPE)

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>applications</SHORT-NAME>
+              <ELEMENTS>
+                <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+                  <SHORT-NAME>functionaltests</SHORT-NAME>
+                  <PORTS>
+                    <R-PORT-PROTOTYPE>
+                      <SHORT-NAME>WeatherServiceRPort</SHORT-NAME>
+                      <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/serviceinterfaces/WeatherService</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE>
+                      <SHORT-NAME>TemperatureServicePPort</SHORT-NAME>
+                      <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/serviceinterfaces/TemperatureService</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                  </PORTS>
+                </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>executables</SHORT-NAME>
+              <ELEMENTS>
+                <EXECUTABLE>
+                  <SHORT-NAME>functionaltests_exe</SHORT-NAME>
+                  <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+                  <BUILD-TYPE>BUILD-TYPE-DEBUG</BUILD-TYPE>
+                  <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+                  <MINIMUM-TIMER-GRANULARITY>1000.0</MINIMUM-TIMER-GRANULARITY>
+                  <ROOT-SW-COMPONENT-PROTOTYPE>
+                    <SHORT-NAME>root_swc</SHORT-NAME>
+                    <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/ara/demo/applications/functionaltests</APPLICATION-TYPE-TREF>
+                  </ROOT-SW-COMPONENT-PROTOTYPE>
+                </EXECUTABLE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

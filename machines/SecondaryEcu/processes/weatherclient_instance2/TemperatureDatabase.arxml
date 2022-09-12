@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>kvs_databases</SHORT-NAME>
+          <ELEMENTS>
+            <PERSISTENCY-KEY-VALUE-DATABASE>
+              <SHORT-NAME>TemperatureDatabase2</SHORT-NAME>
+              <UPDATE-STRATEGY>KEEP-EXISTING</UPDATE-STRATEGY>
+              <URI>/opt/weatherclient_instance2/var/temperature_database.json</URI>
+            </PERSISTENCY-KEY-VALUE-DATABASE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

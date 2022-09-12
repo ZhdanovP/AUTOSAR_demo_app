@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>serviceinterfaces</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>WeatherService</SHORT-NAME>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>ara</SHORT-NAME>
+                  <SYMBOL>ara</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>demo</SHORT-NAME>
+                  <SYMBOL>demo</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <FIELDS>
+                <FIELD>
+                  <SHORT-NAME>CurrentTemperature</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/datatypes/cppimplementationdatatypes/TemperatureType</TYPE-TREF>
+                  <HAS-GETTER>true</HAS-GETTER>
+                  <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                  <HAS-SETTER>false</HAS-SETTER>
+                </FIELD>
+              </FIELDS>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>GetWeatherForecast</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>Date</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/datatypes/cppimplementationdatatypes/DateType</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>Forecast</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/datatypes/cppimplementationdatatypes/ForecastType</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                  <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+            </SERVICE-INTERFACE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>kvs_interfaces</SHORT-NAME>
+          <ELEMENTS>
+            <PERSISTENCY-KEY-VALUE-DATABASE-INTERFACE>
+              <SHORT-NAME>WeatherClientKvsInterface</SHORT-NAME>
+              <REDUNDANCY>NONE</REDUNDANCY>
+              <UPDATE-STRATEGY>KEEP-EXISTING</UPDATE-STRATEGY>
+              <DATA-TYPE-FOR-SERIALIZATION-REFS>
+                <DATA-TYPE-FOR-SERIALIZATION-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/datatypes/cppimplementationdatatypes/TemperatureType</DATA-TYPE-FOR-SERIALIZATION-REF>
+              </DATA-TYPE-FOR-SERIALIZATION-REFS>
+            </PERSISTENCY-KEY-VALUE-DATABASE-INTERFACE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

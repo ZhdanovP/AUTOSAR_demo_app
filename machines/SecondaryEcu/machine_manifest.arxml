@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>machines</SHORT-NAME>
+              <ELEMENTS>
+                <MACHINE>
+                  <SHORT-NAME>SecondaryEcu</SHORT-NAME>
+                  <DEFAULT-APPLICATION-TIMEOUT>
+                    <ENTER-TIMEOUT-VALUE>1.0</ENTER-TIMEOUT-VALUE>
+                    <EXIT-TIMEOUT-VALUE>1.0</EXIT-TIMEOUT-VALUE>
+                  </DEFAULT-APPLICATION-TIMEOUT>
+                  <FUNCTION-GROUPS>
+                    <MODE-DECLARATION-GROUP-PROTOTYPE>
+                      <SHORT-NAME>AdaptiveAppGroup</SHORT-NAME>
+                      <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/ara/demo/function_group_modes/AdaptiveAppGroup</TYPE-TREF>
+                    </MODE-DECLARATION-GROUP-PROTOTYPE>
+                    <MODE-DECLARATION-GROUP-PROTOTYPE>
+                      <SHORT-NAME>MachineState</SHORT-NAME>
+                      <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/ara/demo/function_group_modes/MachineState</TYPE-TREF>
+                    </MODE-DECLARATION-GROUP-PROTOTYPE>
+                  </FUNCTION-GROUPS>
+                  <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/ara/demo/machines/SecondaryEcuDesign</MACHINE-DESIGN-REF>
+                  <MODULE-INSTANTIATIONS>
+                    <OS-MODULE-INSTANTIATION>
+                      <SHORT-NAME>Linux</SHORT-NAME>
+                      <RESOURCE-GROUPS>
+                        <RESOURCE-GROUP>
+                          <SHORT-NAME>Resource_group_1</SHORT-NAME>
+                          <CPU-USAGE>95</CPU-USAGE>
+                          <MEM-USAGE>2000000000</MEM-USAGE>
+                        </RESOURCE-GROUP>
+                        <RESOURCE-GROUP>
+                          <SHORT-NAME>Resource_group_2</SHORT-NAME>
+                          <CPU-USAGE>95</CPU-USAGE>
+                          <MEM-USAGE>2000000000</MEM-USAGE>
+                        </RESOURCE-GROUP>
+                        <RESOURCE-GROUP>
+                          <SHORT-NAME>Resource_group_DB</SHORT-NAME>
+                          <CPU-USAGE>80</CPU-USAGE>
+                          <MEM-USAGE>500000000</MEM-USAGE>
+                        </RESOURCE-GROUP>
+                        <RESOURCE-GROUP>
+                          <SHORT-NAME>Resource_group_DIAG</SHORT-NAME>
+                          <CPU-USAGE>80</CPU-USAGE>
+                          <MEM-USAGE>500000000</MEM-USAGE>
+                        </RESOURCE-GROUP>
+                        <RESOURCE-GROUP>
+                          <SHORT-NAME>Resource_group_IAM</SHORT-NAME>
+                          <CPU-USAGE>80</CPU-USAGE>
+                          <MEM-USAGE>500000000</MEM-USAGE>
+                        </RESOURCE-GROUP>
+                        <RESOURCE-GROUP>
+                          <SHORT-NAME>Resource_group_SM</SHORT-NAME>
+                          <CPU-USAGE>80</CPU-USAGE>
+                          <MEM-USAGE>500000000</MEM-USAGE>
+                        </RESOURCE-GROUP>
+                      </RESOURCE-GROUPS>
+                    </OS-MODULE-INSTANTIATION>
+                    <UCM-MODULE-INSTANTIATION>
+                      <SHORT-NAME>UcmInstance</SHORT-NAME>
+                      <IDENTIFIER>SecondaryEcuUCM</IDENTIFIER>
+                    </UCM-MODULE-INSTANTIATION>
+                  </MODULE-INSTANTIATIONS>
+                </MACHINE>
+                <MACHINE-DESIGN>
+                  <SHORT-NAME>SecondaryEcuDesign</SHORT-NAME>
+                  <COMMUNICATION-CONNECTORS>
+                    <ETHERNET-COMMUNICATION-CONNECTOR>
+                      <SHORT-NAME>EthCommunicationConnector</SHORT-NAME>
+                      <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/ara/demo/network/DefaultEthCluster/DefaultPhysChannel/SecondaryEcuEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+                    </ETHERNET-COMMUNICATION-CONNECTOR>
+                  </COMMUNICATION-CONNECTORS>
+                  <SERVICE-DISCOVER-CONFIGS>
+                    <SOMEIP-SERVICE-DISCOVERY>
+                      <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/ara/demo/network/DefaultEthCluster/DefaultPhysChannel/ServiceDiscoveryEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+                      <SOMEIP-SERVICE-DISCOVERY-PORT>30491</SOMEIP-SERVICE-DISCOVERY-PORT>
+                    </SOMEIP-SERVICE-DISCOVERY>
+                  </SERVICE-DISCOVER-CONFIGS>
+                </MACHINE-DESIGN>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>deployment</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+                  <SHORT-NAME>WeatherServiceSomeIp</SHORT-NAME>
+                  <FIELD-DEPLOYMENTS>
+                    <SOMEIP-FIELD-DEPLOYMENT>
+                      <SHORT-NAME>CurrentTemperature</SHORT-NAME>
+                      <FIELD-REF DEST="FIELD">/ara/serviceinterfaces/WeatherService/CurrentTemperature</FIELD-REF>
+                      <GET>
+                        <SHORT-NAME>Getter</SHORT-NAME>
+                        <METHOD-ID>3101</METHOD-ID>
+                        <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                      </GET>
+                      <NOTIFIER>
+                        <SHORT-NAME>Notifier</SHORT-NAME>
+                        <EVENT-ID>4101</EVENT-ID>
+                        <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                      </NOTIFIER>
+                    </SOMEIP-FIELD-DEPLOYMENT>
+                  </FIELD-DEPLOYMENTS>
+                  <METHOD-DEPLOYMENTS>
+                    <SOMEIP-METHOD-DEPLOYMENT>
+                      <SHORT-NAME>GetWeatherForecast</SHORT-NAME>
+                      <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ara/serviceinterfaces/WeatherService/GetWeatherForecast</METHOD-REF>
+                      <METHOD-ID>3106</METHOD-ID>
+                      <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                    </SOMEIP-METHOD-DEPLOYMENT>
+                  </METHOD-DEPLOYMENTS>
+                  <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ara/serviceinterfaces/WeatherService</SERVICE-INTERFACE-REF>
+                  <EVENT-GROUPS>
+                    <SOMEIP-EVENT-GROUP>
+                      <SHORT-NAME>CurrentTemperatureGroup</SHORT-NAME>
+                      <EVENT-GROUP-ID>4501</EVENT-GROUP-ID>
+                      <EVENT-REFS>
+                        <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ara/demo/deployment/WeatherServiceSomeIp/CurrentTemperature/Notifier</EVENT-REF>
+                      </EVENT-REFS>
+                    </SOMEIP-EVENT-GROUP>
+                  </EVENT-GROUPS>
+                  <SERVICE-INTERFACE-ID>115</SERVICE-INTERFACE-ID>
+                  <SERVICE-INTERFACE-VERSION>
+                    <MAJOR-VERSION>1</MAJOR-VERSION>
+                    <MINOR-VERSION>0</MINOR-VERSION>
+                  </SERVICE-INTERFACE-VERSION>
+                </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

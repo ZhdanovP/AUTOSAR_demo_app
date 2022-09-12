@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>statemanager_instance</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS-TO-MACHINE-MAPPING-SET>
+                  <SHORT-NAME>StateManagerInstanceToMainEcuMappingSet</SHORT-NAME>
+                  <PROCESS-TO-MACHINE-MAPPINGS>
+                    <PROCESS-TO-MACHINE-MAPPING>
+                      <SHORT-NAME>StateManagerInstanceToMainEcuMapping</SHORT-NAME>
+                      <MACHINE-REF DEST="MACHINE">/ara/demo/machines/MainEcu</MACHINE-REF>
+                      <PROCESS-REF DEST="PROCESS">/ara/processes/statemanager_instance</PROCESS-REF>
+                    </PROCESS-TO-MACHINE-MAPPING>
+                  </PROCESS-TO-MACHINE-MAPPINGS>
+                </PROCESS-TO-MACHINE-MAPPING-SET>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

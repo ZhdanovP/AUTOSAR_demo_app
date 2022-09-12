@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>processes</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS>
+              <SHORT-NAME>statemanager_instance</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/ara/executables/statemanager</EXECUTABLE-REF>
+              <LOG-TRACE-DEFAULT-LOG-LEVEL>VERBOSE</LOG-TRACE-DEFAULT-LOG-LEVEL>
+              <LOG-TRACE-FILE-PATH>/var/redirected/statemanager_instance</LOG-TRACE-FILE-PATH>
+              <LOG-TRACE-LOG-MODES>
+                <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+              </LOG-TRACE-LOG-MODES>
+              <LOG-TRACE-PROCESS-DESC>DemoStateManager1</LOG-TRACE-PROCESS-DESC>
+              <LOG-TRACE-PROCESS-ID>DSM1</LOG-TRACE-PROCESS-ID>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/ara/demo/machines/MainEcu/MachineState</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/ara/demo/function_group_modes/MachineState/Startup</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/ara/demo/machines/MainEcu/MachineState</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/ara/demo/function_group_modes/MachineState/Driving</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/ara/demo/machines/MainEcu/MachineState</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/ara/demo/function_group_modes/MachineState/Parking</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/ara/demo/machines/MainEcu/MachineState</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/ara/demo/function_group_modes/MachineState/Leaving</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/ara/demo/machines/MainEcu/Linux/Resource_group_1</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/ara/processes/startup_set/startup_config</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

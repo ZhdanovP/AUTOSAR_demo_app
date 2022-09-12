@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>function_group_modes</SHORT-NAME>
+              <ELEMENTS>
+                <MODE-DECLARATION-GROUP>
+                  <SHORT-NAME>AdaptiveAppGroup</SHORT-NAME>
+                  <INITIAL-MODE-REF DEST="MODE-DECLARATION">/ara/demo/function_group_modes/AdaptiveAppGroup/Off</INITIAL-MODE-REF>
+                  <MODE-DECLARATIONS>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Off</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>On</SHORT-NAME>
+                    </MODE-DECLARATION>
+                  </MODE-DECLARATIONS>
+                </MODE-DECLARATION-GROUP>
+                <MODE-DECLARATION-GROUP>
+                  <SHORT-NAME>MachineState</SHORT-NAME>
+                  <INITIAL-MODE-REF DEST="MODE-DECLARATION">/ara/demo/function_group_modes/MachineState/Startup</INITIAL-MODE-REF>
+                  <MODE-DECLARATIONS>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Driving</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Leaving</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Off</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Parking</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Restart</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Shutdown</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION>
+                      <SHORT-NAME>Startup</SHORT-NAME>
+                    </MODE-DECLARATION>
+                  </MODE-DECLARATIONS>
+                </MODE-DECLARATION-GROUP>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

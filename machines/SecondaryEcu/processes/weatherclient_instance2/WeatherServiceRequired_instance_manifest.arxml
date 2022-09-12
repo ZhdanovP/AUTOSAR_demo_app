@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>demo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>weatherclient_instance2</SHORT-NAME>
+              <ELEMENTS>
+                <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+                  <SHORT-NAME>WeatherServiceRequired</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ara/demo/deployment/WeatherServiceSomeIp</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <REQUIRED-EVENT-GROUPS>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>CurrentTemperatureGroup</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ara/demo/deployment/WeatherServiceSomeIp/CurrentTemperatureGroup</EVENT-GROUP-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                  </REQUIRED-EVENT-GROUPS>
+                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
+                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ara/demo/timing_config/ClientSomeIpSdConfig</SD-CLIENT-CONFIG-REF>
+                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
